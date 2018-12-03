@@ -13,24 +13,27 @@ public class IpValidate {
 		int num = 0,count=0;
  		for(int i = 0 ; i < addr.length ; i++)
 		{
- 			if (count < 3 || num < 255 || num > 0)
-			{
+ 			
 				if(addr[i]=='.')
 				{
 					count++;
+					if (count < 3 || num < 255 || num > 0)
+					{
 					num =0;
+					validate = true;
+					System.out.print(i+"B");
+					}
+					else
+					{
+						validate = false;
+					}
 				}
 				else
 				{
 					num = num*10 + (addr[i]-48);
 					System.out.println("__"+addr[i]+"__"+num+"__");
 				}
-			}
-			else
-			{
-				validate = true;
-				System.out.print(i+"B");
-			}
+			
  			if(count > 3 || num > 255 || num < 0)
 			{
 				validate = false;

@@ -39,6 +39,18 @@ public class Queue {
 		}
 	}
 	
+	void printqueue(Queue q)
+	{
+		node itr = new node();
+		itr = q.front.next;
+		
+		while(itr != null)
+		{
+			System.out.println(itr.data);
+			itr = itr.next;
+		}
+	}
+	
 	void dequeue()
 	{
 		if(front.next== null && rear.next == null)
@@ -65,29 +77,20 @@ public class Queue {
 		q.enqueue(60);
 		q.enqueue(70);
 		
-		System.out.println(q.front.next.data);
-		System.out.println(q.front.next.next.data);
-		System.out.println(q.front.next.next.next.data);
 		
-		
-		node itr = q.front;
-		
-		while(itr.next != q.rear)
-		{
-			System.out.println(itr.next.data);
-			itr.next = itr.next.next;
-		}
-		
-		System.out.println(q.front.next.data);
-		System.out.println(q.front.next.next.data);
-		System.out.println(q.front.next.next.next.data);
-		
+				
+		q.printqueue(q);
+						
+
+
 		q.dequeue();
 		q.dequeue();
 		q.dequeue();
 		q.dequeue();
 		
+
 
 	}
 
 }
+

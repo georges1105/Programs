@@ -43,19 +43,25 @@ public class Stack {
 		}
 	}
 	
-	public static void main(String[] args) {
-		Stack stk = new Stack();
-		node itr = stk.tos;
-		stk.insert(50);
-		stk.insert(60);
-		stk.insert(70);
-		
+	void printStack(Stack stk1)
+	{
+		node itr = stk1.tos;
 		while(itr.next!=null)
 		{
 			System.out.println(itr.next.data);
 			itr = itr.next;
 			}
-		System.out.println();
+	}
+	
+	public static void main(String[] args) {
+		Stack stk = new Stack();
+
+		stk.insert(50);
+		stk.insert(60);
+		stk.insert(70);
+
+		stk.printStack(stk);
+		
 		stk.delete();
 		stk.delete();
 		stk.delete();

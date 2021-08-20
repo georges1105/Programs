@@ -1,4 +1,4 @@
-# Determination
+# Basic Programs
 
 FactorialRecur -Program to find factorial using recursion
 FibonacciRecur - Program to find fibonacci series using recursion
